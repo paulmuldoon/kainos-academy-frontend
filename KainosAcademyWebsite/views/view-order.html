@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Order {{ order.orderID }}</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        <header class="bg-dark text-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Order {{ order.orderID }}</h1>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="container mt-4">
+            <section id="product" class="mt-4">
+                {% if order %}
+                <h2>Order ID</h2>
+                {{ order.orderID }}
+                <h2>Customer Name:</h2>
+                {{ order.customerName}}
+                {% else %}
+                    Could not find order.
+                {% endif %}
+            </section>
+        </main>
+    </body>
+</html>
